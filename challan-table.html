@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complex Table</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        height: 100%;
+      }
+
+      tr {
+        padding: 0;
+      }
+      
+      td,
+      th {
+        margin: 0;
+        text-align: center;
+      }
+
+      th, td {
+        padding: 3px 5px;
+      }
+
+      td {
+        line-break: anywhere;
+      }
+
+      @media print {
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        @page {
+          size: A4;
+          margin: 20px;
+        }
+
+        /* table {
+          page-break-after: auto
+        } */
+
+        /* tr {
+          page-break-inside: avoid;
+          page-break-after: auto;
+        } */
+
+        /* td {
+          page-break-inside: avoid;
+          page-break-after: auto
+        } */
+
+        /* thead {
+          display: table-header-group
+        } */
+      }
+    </style>
+  </head>
+
+  <body>
+    <table width="100%">
+      <thead>
+        <tr>
+          <th rowspan="2">Seat</th>
+          <th rowspan="2">Seat</th>
+          <th rowspan="2">Seat</th>
+          <th colspan="3">Passenger info</th>
+          <th rowspan="2">Seat</th>
+          <th rowspan="2">Seat</th>
+          <th rowspan="2">Seat</th>
+          <th rowspan="2">Seat</th>
+        </tr>
+
+        <tr>
+          <th>Name</th>
+          <th>Sex</th>
+          <th>Mobile</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1<br />2<br />3</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>1<br />2<br />3</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td>1<br />2<br />3</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td colspan="6" style="text-align: left">Total</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td colspan="6" style="text-align: left">Refund/Cancellation fee</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <td colspan="6" style="text-align: left">Total</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
