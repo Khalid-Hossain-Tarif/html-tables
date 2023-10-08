@@ -25,7 +25,7 @@
     td {
       border: 1px solid black;
       border-collapse: collapse;
-      height: 100%;
+      height: -webkit-fill-available;
     }
 
     td,
@@ -67,6 +67,10 @@
 
     .nested-table td:first-child, .nested-table th:first-child {
       border-left: none;
+    }
+
+    .nested-table tr:not(:last-child) {
+      border-bottom: 1px solid black;
     }
 
     .outer-table tr:not(:first-child) .nested-table thead {
