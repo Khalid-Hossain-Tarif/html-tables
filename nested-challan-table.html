@@ -16,6 +16,10 @@
       padding: 20px;
     }
 
+    table {
+      width: 100%;
+    }
+
     table,
     th,
     td {
@@ -24,23 +28,57 @@
       height: 100%;
     }
 
-    tr {
-      padding: 0;
-    }
-
     td,
     th {
       margin: 0;
+      padding: 3px 5px;
+    }
+
+    th {
+      height: 30px;
+    }
+
+    tr {
+      padding: 0;
+      font-size: 12px;
       text-align: center;
     }
 
-    th, td {
-      padding: 3px 5px;
+    td {
+      word-break: break-word;
     }
 
     /* td {
       word-break: break-word;
     } */
+
+    .padding-0 {
+      padding: 0;
+    }
+
+    .nested-table {
+      border: none;
+    }
+
+    .nested-table th {
+      border-top-width: 0;
+    }
+
+    .nested-table td {
+      border-block: none;
+    }
+
+    .nested-table td:last-child, .nested-table th:last-child {
+      border-right: none;
+    }
+
+    .nested-table td:first-child, .nested-table th:first-child {
+      border-left: none;
+    }
+
+    .outer-table tr:not(:first-child) .nested-table thead {
+      display: none;
+    }
 
     @media print {
       * {
@@ -75,40 +113,126 @@
 </head>
 
 <body>
-<table width="100%">
+<table class="outer-table" cellspacing="0" cellpadding="0">
   <thead>
-  <tr>
-    <th>Counter Title</th>
-    <th>Sold</th>
-    <th>Fare</th>
-    <th>Commission</th>
-    <th>Total Commission</th>
-    <th>Particular</th>
-    <th>Receive Amount</th>
-  </tr>
+    <tr>
+      <th style="width: 10%">Counter Title</th>
+      <th style="width: 10%">Sold</th>
+      <th style="width: 30%">Fare</th>
+      <th style="width: 20%">Commission</th>
+      <th style="width: 10%">Total Commission</th>
+      <th style="width: 10%">Particular</th>
+      <th style="width: 10%">Receive Amount</th>
+    </tr>
   </thead>
 
   <tbody>
-  <tr>
-    <td>A1, A2, A3</td>
-    <td>Khalid Hossain</td>
-    <td>Male</td>
-    <td>01777531675</td>
-    <td>Shahed Ahmed Shahed Ahmed Shahed Ahmed Shahed Ahmed</td>
-    <td>Shahed Ahmed</td>
-    <td>27 October, 2023, 2:47 PM</td>
-    <td>Fakirapool...</td>
-    <td>Cox's Bazar</td>
+    <tr>
+    <td>Counter 1</td>
+    <td>20</td>
+
+    <td class="padding-0">
+      <table class="nested-table" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+          <th style="width: 15%">User</th>
+          <th style="width: 5%">Total</th>
+          <th style="width: 10%">Amount</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <!--Loop-->
+        <tr>
+          <td style="width: 15%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+          <td style="width: 5%">2</td>
+          <td style="width: 10%">(2 x 1500) = 3000</td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+
+    <td class="padding-0">
+      <table class="nested-table" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+          <th style="width: 10%">User name</th>
+          <th style="width: 5%">Commission</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <!--Loop-->
+        <tr>
+          <td style="width: 10%">CM.Gabtoli Counter(1)-1	</td>
+          <td style="width: 5%">2</td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+
+    <td>2</td>
     <td>0</td>
-    <td>35</td>
-    <td>1065</td>
-    <td>Fakirapool...</td>
+    <td>3000</td>
   </tr>
 
-  <tr style="font-weight: 600;">
-    <td>Total</td>
-    <td>4000</td>
-  </tr>
+    <tr>
+      <td>Counter 1</td>
+      <td>20</td>
+
+      <td class="padding-0">
+        <table class="nested-table" cellspacing="0" cellpadding="0">
+          <thead>
+          <tr>
+            <th style="width: 15%">User</th>
+            <th style="width: 5%">Total</th>
+            <th style="width: 10%">Amount</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <!--Loop-->
+          <tr>
+            <td style="width: 15%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+            <td style="width: 5%">2</td>
+            <td style="width: 10%">(2 x 1500) = 3000</td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+
+      <td class="padding-0">
+        <table class="nested-table" cellspacing="0" cellpadding="0">
+          <thead>
+          <tr>
+            <th style="width: 10%">User name</th>
+            <th style="width: 5%">Commission</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <!--Loop-->
+          <tr>
+            <td style="width: 10%">CM.Gabtoli Counter(1)-1	</td>
+            <td style="width: 5%">2</td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+
+      <td>2</td>
+      <td>0</td>
+      <td>3000</td>
+    </tr>
+
+
+
+
+
+<!--  <tr style="font-weight: 600;">-->
+<!--    <td>Total</td>-->
+<!--    <td>4000</td>-->
+<!--  </tr>-->
   </tbody>
 </table>
 </body>
