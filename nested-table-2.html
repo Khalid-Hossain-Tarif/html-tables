@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Challan Table</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 100%;
+        }
+
+        td,
+        th {
+            margin: 0;
+            padding: 3px;
+            word-break: break-all;
+        }
+
+        th {
+            height: 33px;
+        }
+
+        tr {
+            padding: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .padding-0 {
+            padding: 0;
+        }
+
+        .nested-table {
+            border: none;
+        }
+
+        .nested-table th {
+            border-top-width: 0;
+        }
+
+        .nested-table td {
+            border-block: none;
+        }
+
+        .nested-table td:last-child, .nested-table th:last-child {
+            border-right: none;
+        }
+
+        .nested-table td:first-child, .nested-table th:first-child {
+            border-left: none;
+        }
+
+        .nested-table tr:not(:last-child) {
+            border-bottom: 1px solid black;
+        }
+
+        .outer-table tr:not(:first-child) .nested-table thead {
+            display: none;
+        }
+
+        /*If Nested Header*/
+        .nested-table-header th {
+            border-bottom-width: 0;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 20px;
+            }
+
+            /* table {
+              page-break-after: auto;
+            } */
+
+            /* tr {
+              page-break-inside: avoid;
+              page-break-after: auto;
+            } */
+
+            /* td {
+              page-break-inside: avoid;
+              page-break-after: auto
+            } */
+
+            /* thead {
+              display: table-header-group;
+            } */
+        }
+    </style>
+</head>
+
+<body>
+<table class="outer-table" cellspacing="0" cellpadding="0">
+    <tbody>
+        <!--Loop-->
+        <tr>
+
+
+
+            <td>Shamoli Counter Shamoli Shamoli Counter </td>
+            <td>CM.Shamoli Counter-1</td>
+
+            <td class="padding-0">
+                <table class="nested-table" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <!--Loop-->
+                    <tr>
+                        <td style="width: 40%">Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar</td>
+                        <td style="width: 15%">9</td>
+                        <td style="width: 15%">0</td>
+                        <td style="width: 15%">13500</td>
+                        <td style="width: 15%">0</td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 40%">Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar Dhaka - Cox's Bazar</td>
+                        <td style="width: 15%">9</td>
+                        <td style="width: 15%">0</td>
+                        <td style="width: 15%">13500</td>
+                        <td style="width: 15%">0</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+
+            <td>13500</td>
+        </tr>
+
+
+<!--        <tr>-->
+<!--            <td colspan="3" style="width: 48%">Sub total</td>-->
+<!--            <td>9</td>-->
+<!--            <td>0</td>-->
+<!--            <td>13500</td>-->
+<!--            <td>0</td>-->
+<!--            <td>13500</td>-->
+<!--        </tr>-->
+    </tbody>
+</table>
+</body>
+</html>
