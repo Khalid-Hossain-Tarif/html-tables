@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested Challan Table</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 100%;
+        }
+
+        td,
+        th {
+            margin: 0;
+            padding: 3px;
+            word-break: break-all;
+        }
+
+        th {
+            height: 33px;
+        }
+
+        tr {
+            padding: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .padding-0 {
+            padding: 0;
+        }
+
+        .nested-table {
+            border: none;
+        }
+
+        .nested-table th {
+            border-top-width: 0;
+        }
+
+        .nested-table td {
+            border-block: none;
+        }
+
+        .nested-table td:last-child, .nested-table th:last-child {
+            border-right: none;
+        }
+
+        .nested-table td:first-child, .nested-table th:first-child {
+            border-left: none;
+        }
+
+        .nested-table tr:not(:last-child) {
+            border-bottom: 1px solid black;
+        }
+
+        .outer-table tr:not(:first-child) .nested-table thead {
+            display: none;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 20px;
+            }
+
+            /* table {
+              page-break-after: auto;
+            } */
+
+            /* tr {
+              page-break-inside: avoid;
+              page-break-after: auto;
+            } */
+
+            /* td {
+              page-break-inside: avoid;
+              page-break-after: auto
+            } */
+
+            /* thead {
+              display: table-header-group;
+            } */
+        }
+    </style>
+</head>
+
+<body>
+<table class="outer-table" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th style="width: 10%">Counter Title</th>
+        <th style="width: 5%">Sold</th>
+        <th style="width: 40%">Fare</th>
+        <th style="width: 20%">Commission</th>
+        <th style="width: 10%">Total Commission</th>
+        <th style="width: 5%">Particular</th>
+        <th style="width: 10%">Receive Amount</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>Counter 1</td>
+        <td>20</td>
+
+        <td class="padding-0">
+            <table class="nested-table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th style="width: 50%">User</th>
+                    <th style="width: 25%">Total</th>
+                    <th style="width: 25%">Amount</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!--Loop-->
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 25%">2</td>
+                    <td style="width: 25%">(2 x 1500) = 3000</td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 25%">2</td>
+                    <td style="width: 25%">(2 x 1500) = 3000</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td class="padding-0">
+            <table class="nested-table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th style="width: 50%">User name</th>
+                    <th style="width: 50%">Commission</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!--Loop-->
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 50%">2</td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 50%">2</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>2</td>
+        <td>0</td>
+        <td>3000</td>
+    </tr>
+
+    <tr>
+        <td>Counter 1</td>
+        <td>20</td>
+
+        <td class="padding-0">
+            <table class="nested-table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th style="width: 50%">User</th>
+                    <th style="width: 25%">Total</th>
+                    <th style="width: 25%">Amount</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!--Loop-->
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 25%">2</td>
+                    <td style="width: 25%">(2 x 1500) = 3000</td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 25%">2</td>
+                    <td style="width: 25%">(2 x 1500) = 3000</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td class="padding-0">
+            <table class="nested-table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th style="width: 50%">User name</th>
+                    <th style="width: 50%">Commission</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!--Loop-->
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 50%">2</td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 50%">2</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>2</td>
+        <td>0</td>
+        <td>3000</td>
+    </tr>
+
+    <tr>
+        <td>Counter 1</td>
+        <td>20</td>
+
+        <td class="padding-0">
+            <table class="nested-table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th style="width: 50%">User</th>
+                    <th style="width: 25%">Total</th>
+                    <th style="width: 25%">Amount</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!--Loop-->
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 25%">2</td>
+                    <td style="width: 25%">(2 x 1500) = 3000</td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 25%">2</td>
+                    <td style="width: 25%">(2 x 1500) = 3000</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td class="padding-0">
+            <table class="nested-table" cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <th style="width: 50%">User name</th>
+                    <th style="width: 50%">Commission</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!--Loop-->
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 50%">2</td>
+                </tr>
+                <tr>
+                    <td style="width: 50%">CM.Gabtoli Counter(1)-1 CM.Gabtoli Counter(1)-1</td>
+                    <td style="width: 50%">2</td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+
+        <td>2</td>
+        <td>0</td>
+        <td>3000</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
